@@ -19,7 +19,7 @@ class FishesController < ApplicationController
 
 	def show
 		@fish = Fish.find(params[:id])
-		
+
 		
 	end
 	def edit
@@ -44,7 +44,7 @@ class FishesController < ApplicationController
 	private
 
 	def fish_params
-		params.require(:fish).permit(:name,:description,:prices,:species)
+		params.require(:fish).permit(:name,:description,:prices,:species,:image)
 	end
 
 	def verify_is_admin

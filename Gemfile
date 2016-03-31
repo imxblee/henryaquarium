@@ -29,6 +29,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'devise', '>= 3.2.4'
 gem 'commontator', '~> 4.11.1'
+gem 'carrierwave'
 gem 'rails_12factor', group: :production
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
