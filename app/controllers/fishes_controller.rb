@@ -20,6 +20,7 @@ class FishesController < ApplicationController
 	def show
 		@fish = Fish.find(params[:id])
 		
+		
 	end
 	def edit
 		@fish = Fish.find(params[:id])
