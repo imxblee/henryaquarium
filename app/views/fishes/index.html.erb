@@ -5,7 +5,7 @@
 
 		<% @fishes.each do |fish| %>
 			<div class='booyah-box col-xs-3'>
-					<h1><%= fish.name %></h1>
+					<h1><%= link_to fish.name, fish_path(fish) %></h1>
 					<p><%= truncate(fish.description,length: 30) %></p>
 					<p><%= number_to_currency fish.price %></p>
 					<i><%= fish.species %></i>

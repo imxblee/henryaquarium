@@ -1,0 +1,14 @@
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <h1><%= @fish.name %></h1>
+  <i><%= @fish.description %></i>
+  <br/><br/>
+  <p><%= @fish.price %></p>
+  <p><%= @fish.species %></p>
+  <% if current_user.try(:admin?) %>
+  <div class="pull-right">
+    <%= link_to 'Edit', edit_fish_path(@fish), class: 'btn btn-primary' %>
+    <%= link_to 'Destroy', fish_path(@fish), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
+  </div>
+  <% end %>
+
+</div>

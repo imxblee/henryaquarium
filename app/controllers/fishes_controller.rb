@@ -1,5 +1,5 @@
 class FishesController < ApplicationController
-	before_action :verify_is_admin ,only:[ :new,:create]
+	before_action :verify_is_admin ,only:[ :new,:create,:edit]
 
 	
 	def index
@@ -10,6 +10,26 @@ class FishesController < ApplicationController
 	end
 	def create
 		Fish.create(fish_params)
+		redirect_to root_path
+	end
+
+	def show
+		@fish = Fish.find(params[:id])
+		
+	end
+	def edit
+		@fish = Fish.find(params[:id])
+	end
+	def update
+		@fish = Fish.find(params[:id])
+		@fish.update_attributes(fish_params)
+		redirect_to root_path
+		
+	end
+
+	def destroy
+		@fish = Fish.find(params[:id])
+		@fish.destroy
 		redirect_to root_path
 	end
 	private
