@@ -5,8 +5,10 @@ class CreateFishes < ActiveRecord::Migration
       t.text :description
       t.decimal :price
       t.string :species
-      
+
       t.timestamps
     end
   end
 end
+
+

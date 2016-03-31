@@ -1,1 +1,16 @@
 <h1>Welcome to my Aquarium Web App</h1>
+
+<div class='container' >
+	<div class='row'> 
+
+		<% @fishes.each do |fish| %>
+			<div class='booyah-box col-xs-3'>
+					<h1><%= fish.name %></h1>
+					<p><%= truncate(fish.description,length: 30) %></p>
+					<p><%= number_to_currency fish.price %></p>
+					<i><%= fish.species %></i>
+			</div>
+<% end %>
+
+	</div>
+</div>
