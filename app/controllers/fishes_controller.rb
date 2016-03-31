@@ -9,8 +9,12 @@ class FishesController < ApplicationController
 		@fish = Fish.new
 	end
 	def create
-		Fish.create(fish_params)
-		redirect_to root_path
+		@fish = Fish.create(fish_params)
+		if @fish.valid?
+			redirect_to root_path
+		  else
+		    render :new, status: :unprocessable_entity
+		end
 	end
 
 	def show
@@ -23,7 +27,11 @@ class FishesController < ApplicationController
 	def update
 		@fish = Fish.find(params[:id])
 		@fish.update_attributes(fish_params)
-		redirect_to root_path
+		if @fish.valid?
+			redirect_to root_path
+		  else
+		    render :new, status: :unprocessable_entity
+		end
 		
 	end
 
