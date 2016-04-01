@@ -44,7 +44,7 @@ class FishesController < ApplicationController
 	private
 
 	def fish_params
-		params.require(:fish).permit(:name,:description,:prices,:species,:image)
+		params.require(:fish).permit(:name,:description,:price,:species,:image)
 	end
 
 	def verify_is_admin
